@@ -1,61 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feria Digital – El Progreso</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feria Digital - El Progreso</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="funciones.js" defer></script>
 </head>
 <body>
-    <!-- Encabezado con hero -->
-    <header class="hero">
-        <div class="hero-text">
-            <h1>Feria Digital – El Progreso</h1>
-            <p>Innovación, tradición y comunidad en un solo lugar.</p>
-            <a href="#cultivos" class="btn">Explorar feria</a>
-        </div>
-    </header>
+  <header>
+    <h1>Feria Digital - El Progreso</h1>
+    <p class="descripcion">Innovación, tradición y comunidad en un solo lugar.</p>
+  </header>
 
-    <!-- Menú de navegación fijo -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="cultivos.html">Cultivos / Productos</a></li>
-            <li><a href="galeria.html">Galería de fotos</a></li>
-            <li><a href="logros.html">Logros escolares</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
+  <main>
+    <section class="intro">
+      <h2>Bienvenidos a nuestra feria</h2>
+      <p>
+        La Feria Digital de El Progreso es un espacio para mostrar la riqueza agrícola de nuestra comunidad. 
+        Aquí encontrarás productos cultivados con amor, prácticas sostenibles y el orgullo de nuestras tradiciones campesinas.
+      </p>
+    </section>
 
-    <!-- Contenido principal -->
-    <main>
-        <section id="cultivos" class="section">
-            <h2>Cultivos destacados</h2>
-            <div class="cards">
-                <article class="card">
-                    <img src="img/cafe.jpg" alt="Café orgánico">
-                    <h3>Café orgánico</h3>
-                    <p>Granos cultivados con prácticas sostenibles, aroma intenso y sabor balanceado.</p>
-                </article>
-                <article class="card">
-                    <img src="img/platanos.jpg" alt="Plátano criollo">
-                    <h3>Plátano criollo</h3>
-                    <p>Fresco y nutritivo, base de la alimentación local y de gran calidad.</p>
-                </article>
-            </div>
-        </section>
+    <section class="cultivos">
+      <h2>Cultivos destacados</h2>
+      <div class="botones">
+        <button onclick="mostrarCultivo('cafe')">☕ Café Orgánico</button>
+        <button onclick="mostrarCultivo('platano')">🍌 Plátano Criollo</button>
+        <button onclick="mostrarCultivo('manzana')">🍎 Manzana</button>
+        <button onclick="mostrarCultivo('uvas')"> 🍇 Uvas</button>
+      </div>
 
-        <section id="info" class="section">
-            <h2>Sobre la feria</h2>
-            <p>La Feria Digital de la Vereda El Progreso es un espacio para mostrar la riqueza agrícola, 
-               los logros educativos y la unión comunitaria. Aquí encontrarás productos locales, 
-               fotografías de nuestras tradiciones y proyectos escolares destacados.</p>
-        </section>
-    </main>
+      <div id="cafe" class="cultivo oculto">
+        <img src="img/coffe.jpg" alt="Café Orgánico">
+        <h3>Café Orgánico</h3>
+        <p>Granos cultivados con prácticas sostenibles, aroma intenso y sabor balanceado. 
+        Nuestro café es símbolo de esfuerzo campesino y orgullo nacional.</p>
+      </div>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2026 Feria Digital – El Progreso | Diseñado con  por la comunidad</p>
-    </footer>
-</body>
-</html>
+      <div id="platano" class="cultivo oculto">
+        <img src="img/platano_criollo.jpg" alt="Plátano Criollo">
+        <h3>Plátano Criollo</h3>
+        <p>Plátano criollo de excelente calidad, base de la alimentación tradicional. 
+        Es un cultivo versátil que representa la esencia de nuestra tierra.</p>
+      </div>
+
+      <div id="manzana" class="cultivo oculto">
+        <img src="img/Manzana.jpg" alt="manzana">
+        <h3>Manzana</h3>
+        <p>""La manzana es un fruto fresco y nutritivo, símbolo de salud y tradición.
+        En nuestra feria representa el esfuerzo de los agricultores por ofrecer productos naturales y de calidad,
+        cultivados con dedicación y respeto por la tierra."</p>
+      </div>
+
+       <div id="uvas" class="cultivo oculto">
+        <img src="img/Uvas.jpg" alt="uvas">
+        <h3>Uvas</h3>
+        <p>"Las uvas son frutos versátiles y llenos de sabor, cultivados con dedicación en nuestras tierras.</p>
+      </div>
+    </section>
+
+    <section class="extra">
+      <h2>Más sobre nuestra comunidad</h2>
+      <p>
+        Además de los cultivos, celebramos logros escolares, proyectos comunitarios y la unión de generaciones. 
+        La feria es un puente entre innovación tecnológica y la sabiduría ancestral de nuestros agricultores
