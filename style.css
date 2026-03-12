@@ -299,9 +299,39 @@ p {
   background-color: #2a6e39;
 }
 
+/* Galería de fotos: imágenes pequeñas y uniformes */
+.imagenes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.imagenes img {
+  width: 300px;       /* ancho fijo */
+  height: 200px;      /* alto fijo */
+  object-fit: cover;  /* recorta proporcionalmente sin deformar */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* Cultivos: imágenes centradas */
 .cultivo img {
-  display: block;       /* convierte la imagen en un bloque */
-  margin: 0 auto;       /* centra horizontalmente */
-  max-width: 300px;     /* ajusta el tamaño máximo */
-  border-radius: 10px;  /* opcional: esquinas redondeadas */
+  display: block;
+  margin: 0 auto;     /* centra horizontalmente */
+  max-width: 300px;   /* tamaño máximo */
+  border-radius: 10px;
+}
+
+.info-extra {
+  text-align: right;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f4f4f4; /* fondo suave */
+}
+
+.info-extra p {
+  font-size: 1.1rem;
+  color: #024613;
+  margin: 5px 0;
 }
