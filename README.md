@@ -1,52 +1,54 @@
 # Feria Digital - El Progreso
 
 ##  Descripción del Proyecto
-Este proyecto es una página web dedicada a la **Feria Digital - El Progreso**, un espacio virtual que busca resaltar la tradición agrícola y cultural de la región, integrando innovación tecnológica con autenticidad rural.  
-El sitio está diseñado con **HTML semántico**, estilos organizados en **CSS**, y funcionalidades interactivas en **JavaScript** para ofrecer una experiencia clara, atractiva y profesional.
+Feria Digital - El Progreso es una página web que busca resaltar la tradición agrícola y cultural de la región. El proyecto combina innovación tecnológica con autenticidad rural, ofreciendo un espacio virtual atractivo y profesional.  
+La página está construida con HTML semántico, estilos en CSS y funcionalidades interactivas en JavaScript.
 
----
 
-##  Cómo ejecutar
-1. Descarga o clona este repositorio en tu computadora.
-2. Abre el archivo `index.html` en tu navegador preferido (Chrome, Edge, Firefox).
-3. Navega por las secciones utilizando el menú principal.
+## Cómo ejecutar el proyecto
+abre el archivo `index.html` en tu navegador preferido, como Chrome, Edge o Firefox.  
+Finalmente, navega por las secciones utilizando el menú principal.
 
----
 
-##  Funcionalidad JS implementada
-- **Interacción dinámica:**  
-  - Validación de formularios de contacto (campos obligatorios, formato de correo).  
-  - Botones con efectos interactivos (hover, clic).  
-- **Navegación mejorada:**  
-  - Scroll suave entre secciones.  
-  - Menú responsive que se despliega en dispositivos móviles.  
-- **Efectos visuales:**  
-  - Animaciones al cargar imágenes y textos.  
-  - Mensajes de confirmación al enviar formularios.
 
----
+##  Funcionamiento de la página
+La página tiene un encabezado con un menú centrado y responsive que facilita la navegación.  
+En la sección principal se muestra el título de la feria y botones atractivos para acceder a productos destacados.  
+También incluye un formulario de contacto que valida los campos obligatorios y el formato del correo electrónico.  
+Las imágenes y textos aparecen con animaciones y transiciones, y el diseño se adapta a diferentes tamaños de pantalla.
+
+
+
+##  Funcionalidad en JavaScript
+El formulario de contacto valida nombre, correo y mensaje antes de enviarse.  
+Los botones tienen efectos al pasar el cursor o hacer clic, y muestran mensajes de confirmación al enviar formularios.  
+La navegación entre secciones se realiza con scroll suave y el menú se despliega en dispositivos móviles.  
+Además, se aplican animaciones al cargar imágenes y textos para mejorar la experiencia visual.
+
+
 
 ##  Evidencias
-### Capturas de pantalla
-- Página principal con navegación clara.  
-- Formulario de contacto validado con JS.  
-- Ejemplo de animaciones y transiciones.  
+En la carpeta `/evidencias` se pueden incluir capturas de pantalla.  
+Por ejemplo: la página principal con navegación clara, el formulario de contacto validado y ejemplos de animaciones y transiciones.  
+Se recomienda subir imágenes en formato `.png` o `.jpg`.
 
-*(Incluir aquí imágenes en formato `.png` o `.jpg` dentro de la carpeta `/evidencias` o enlaces a capturas alojadas en el repositorio.)*
 
----
 
 ##  Criterios de Evaluación
-- **HTML semántico + navegación clara:** 30%  
-- **CSS legible y organizado (sin inline):** 25%  
-- **JS con interacción + validación funcional:** 30%  
-- **Evidencias de pruebas + README + repo ordenado:** 15%  
+HTML semántico y navegación clara representan el 30%.  
+CSS organizado y sin estilos inline corresponde al 25%.  
+JavaScript con interacción y validación funcional suma el 30%.  
+Evidencias, README completo y repositorio ordenado aportan el 15%.
 
----
+
 
 ##  Organización del repositorio
-- `/index.html` → Página principal.  
-- `/css/style.css` → Estilos organizados y comentados.  
-- `/js/script.js` → Funcionalidades interactivas y validaciones.  
-- `/img/` → Carpeta de imágenes utilizadas.  
-- `/evidencias/` → Capturas de pantalla y pruebas.  
+El archivo `/index.html` contiene la página principal.  
+La carpeta `/css/style.css` guarda los estilos organizados y comentados.  
+El archivo `/js/script.js` incluye las funcionalidades interactivas y validaciones.  
+La carpeta `/img/` contiene las imágenes utilizadas.  
+La carpeta `/evidencias/` guarda las capturas de pantalla y pruebas.
+
+
+
+
