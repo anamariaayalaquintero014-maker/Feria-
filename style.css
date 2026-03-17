@@ -335,3 +335,26 @@ p {
   color: #024613;
   margin: 5px 0;
 }
+
+/* Estilos generales para pantallas grandes */
+body {
+  font-size: 18px;
+  margin: 20px;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+    margin: 10px;
+  }
+
+  nav ul {
+    flex-direction: column; /* Menú en columna en vez de horizontal */
+    align-items: center;
+  }
+
+  .contenedor {
+    width: 100%; /* Que ocupe todo el ancho en móvil */
+  }
+}
