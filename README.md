@@ -1,23 +1,54 @@
 # Feria Digital - El Progreso
 
-Este proyecto es una página web que representa una **feria digital** dedicada a mostrar algunos de los frutos producidos por la comunidad.  
-Su objetivo es combinar tradición agrícola con herramientas modernas de difusión digital.
+##  Descripción del Proyecto
+Feria Digital - El Progreso es una página web que busca resaltar la tradición agrícola y cultural de la región. El proyecto combina innovación tecnológica con autenticidad rural, ofreciendo un espacio virtual atractivo y profesional.  
+La página está construida con HTML semántico, estilos en CSS y funcionalidades interactivas en JavaScript.
 
-##  Características
-- Página principal con información de la feria.  
-- Galería de imágenes de los frutos producidos.  
-- Estilos personalizados con CSS para una presentación atractiva.  
-- Código organizado en HTML, CSS y JavaScript.
 
-##  Estructura del proyecto
-- `index.html` → Página principal.  
-- `galeria.html` → Galería de frutos.  
-- `style.css` → Estilos de la página.  
-- `funciones.js` → Funciones interactivas.  
-- `img/` → Carpeta con imágenes de los frutos.  
-- `README.md` → Documentación del proyecto.  
+## Cómo ejecutar el proyecto
+abre el archivo `index.html` en tu navegador preferido, como Chrome, Edge o Firefox.  
+Finalmente, navega por las secciones utilizando el menú principal.
 
-##  Cómo visualizar
-1. Clona este repositorio:  
-   ```bash
-   git clone https://github.com/usuario/Feria-.git
+
+
+##  Funcionamiento de la página
+La página tiene un encabezado con un menú centrado y responsive que facilita la navegación.  
+En la sección principal se muestra el título de la feria y botones atractivos para acceder a productos destacados.  
+También incluye un formulario de contacto que valida los campos obligatorios y el formato del correo electrónico.  
+Las imágenes y textos aparecen con animaciones y transiciones, y el diseño se adapta a diferentes tamaños de pantalla.
+
+
+
+##  Funcionalidad en JavaScript
+El formulario de contacto valida nombre, correo y mensaje antes de enviarse.  
+Los botones tienen efectos al pasar el cursor o hacer clic, y muestran mensajes de confirmación al enviar formularios.  
+La navegación entre secciones se realiza con scroll suave y el menú se despliega en dispositivos móviles.  
+Además, se aplican animaciones al cargar imágenes y textos para mejorar la experiencia visual.
+
+
+
+##  Evidencias
+En la carpeta `/evidencias` se pueden incluir capturas de pantalla.  
+Por ejemplo: la página principal con navegación clara, el formulario de contacto validado y ejemplos de animaciones y transiciones.  
+Se recomienda subir imágenes en formato `.png` o `.jpg`.
+
+
+
+##  Criterios de Evaluación
+HTML semántico y navegación clara representan el 30%.  
+CSS organizado y sin estilos inline corresponde al 25%.  
+JavaScript con interacción y validación funcional suma el 30%.  
+Evidencias, README completo y repositorio ordenado aportan el 15%.
+
+
+
+##  Organización del repositorio
+El archivo `/index.html` contiene la página principal.  
+La carpeta `/css/style.css` guarda los estilos organizados y comentados.  
+El archivo `/js/script.js` incluye las funcionalidades interactivas y validaciones.  
+La carpeta `/img/` contiene las imágenes utilizadas.  
+La carpeta `/evidencias/` guarda las capturas de pantalla y pruebas.
+
+
+
+
