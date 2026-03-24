@@ -281,22 +281,69 @@ p {
   transform: scale(1.05);
 }
 
-/* CTA destacado (Explora la feria) */
 .cta {
-  background-color: #2fb45b;
+  position: absolute;
+  top: 20px;
+  right: 15px;
+
+  background-color: #0b610b; /* más contraste */
   color: #fff;
-  padding: 18px 30px;
-  font-size: 1.3rem;
+
+  padding: 14px 25px;
+  font-size: 1.1rem;
   font-weight: bold;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin: 20px 0;
-  float: right; /* lo coloca a la derecha */
-}
 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 10;
+}
 .cta:hover {
   background-color: #2a6e39;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 300px;
+  margin: 10% auto;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal input {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.modal button {
+  background-color: #2fb45b;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.close {
+  cursor: pointer;
+  float: right;
+  font-size: 20px;
 }
 
 /* Galería de fotos: imágenes pequeñas y uniformes */

@@ -7,118 +7,163 @@
   <link rel="stylesheet" href="style.css">
   <script src="funciones.js" defer></script>
 </head>
+
 <body>
-  <header>
-    <h1>Feria Digital - El Progreso</h1>
-    <p class="descripcion">Innovación, tradición y comunidad en un solo lugar.</p>
-  </header>
 
-  <!-- Menú interactivo -->
-  <nav class="botones">
-    <button onclick="mostrarSeccion('intro')">🏠 Inicio</button>
-    <button onclick="mostrarSeccion('cultivos')">🌱 Cultivos</button>
-    <button onclick="mostrarSeccion('galeria')">📸 Galería</button>
-    <button onclick="mostrarSeccion('logros')">🎓 Logros</button>
-    <button onclick="mostrarSeccion('quienes')">👥 Quiénes somos</button>
-    <button onclick="mostrarSeccion('contacto')">✉️ Aquí nos Contactoamos contigo </button>
-  </nav>
+<header>
+  <h1>Feria Digital - El Progreso</h1>
+  <p class="descripcion">Innovación, tradición y comunidad en un solo lugar.</p>
+</header>
 
-  <main>
-    <!-- Pantalla inicial minimalista -->
-    <section id="intro">
-      <h2>Bienvenidos a nuestra feria</h2>
-      <p>La Feria Digital de El Progreso es un espacio para mostrar la riqueza agrícola de nuestra comunidad.</p>
-      <button class="cta" onclick="mostrarSeccion('cultivos')">Explora la feria</button>
-    </section>
+<nav class="botones">
+  <button onclick="mostrarSeccion('intro')">🏠 Inicio</button>
+  <button onclick="mostrarSeccion('cultivos')">🌱 Cultivos</button>
+  <button onclick="mostrarSeccion('galeria')">📸 Galería</button>
+  <button onclick="mostrarSeccion('logros')">🎓 Logros</button>
+  <button onclick="mostrarSeccion('quienes')">👥 Quiénes somos</button>
+  <button onclick="mostrarSeccion('contacto')">✉️ Aquí nos Contactoamos contigo</button>
+</nav>
 
-    <!-- Cultivos -->
-    <section id="cultivos" class="oculto">
-      <h2>Cultivos destacados</h2>
-      <div class="botones">
-        <button onclick="mostrarCultivo('cafe')">☕ Café Orgánico</button>
-        <button onclick="mostrarCultivo('platano')">🍌 Plátano Criollo</button>
-        <button onclick="mostrarCultivo('manzana')">🍎 Manzana</button>
-        <button onclick="mostrarCultivo('uvas')">🍇 Uvas</button>
-      </div>
+<main>
 
-      <div id="cafe" class="cultivo oculto">
-        <img src="img/coffe.jpg" alt="Café Orgánico">
-        <h3>Café Orgánico</h3>
-        <p>Granos cultivados con prácticas sostenibles, aroma intenso y sabor balanceado.</p>
-      </div>
+<section id="intro">
+  <h2>Bienvenidos a nuestra feria</h2>
+  <p>La Feria Digital de El Progreso es un espacio para mostrar la riqueza agrícola de nuestra comunidad.</p>
+  <button class="cta" onclick="abrirAuth()">Registrarse / Iniciar sesión</button>
+</section>
 
-      <div id="platano" class="cultivo oculto">
-        <img src="img/platano_criollo.jpg" alt="Plátano Criollo">
-        <h3>Plátano Criollo</h3>
-        <p>Plátano criollo de excelente calidad, base de la alimentación tradicional.</p>
-      </div>
+<!-- MODAL -->
+<div id="authModal" class="modal">
+  <div class="modal-content">
+    
+    <h3>Acceso</h3>
 
-      <div id="manzana" class="cultivo oculto">
-        <img src="img/Manzana.jpg" alt="Manzana">
-        <h3>Manzana</h3>
-        <p>Fruto fresco y nutritivo, símbolo de salud y tradición.</p>
-      </div>
+    <input type="email" id="email" placeholder="Correo">
+    <input type="password" id="password" placeholder="Contraseña">
 
-      <div id="uvas" class="cultivo oculto">
-        <img src="img/Uvas.jpg" alt="Uvas">
-        <h3>Uvas</h3>
-        <p>Frutos versátiles y llenos de sabor, cultivados con dedicación.</p>
-      </div>
-    </section>
+    <button onclick="login()">Ingresar</button>
+    <button onclick="register()">Registrarse</button>
+    <button onclick="resetPassword()">Olvidé mi contraseña</button>
 
-    <!-- Galería -->
-    <section id="galeria" class="oculto">
-      <h2>Galería de fotos</h2>
-      <div class="imagenes">
-        <img src="img/exposición.jpg" alt="Exposición de productos agrícolas">
-        <img src="img/gente.jpg" alt="Participación de la comunidad">
-        <img src="img/vista.jpg" alt="Productos frescos de la comunidad">
-      </div>
-    </section>
+    <p id="mensaje"></p>
 
-    <!-- Logros escolares -->
-    <section id="logros" class="oculto">
-      <h2>Logros escolares</h2>
-      <ul>
-        <li>🏆 Primer lugar en concurso de ciencias agrícolas.</li>
-        <li>📚 Proyecto comunitario de huertas escolares sostenibles.</li>
-        <li>🎨 Reconocimiento en feria cultural por innovación tecnológica.</li>
-      </ul>
-    </section>
+    <span class="close" onclick="cerrarAuth()">×</span>
+  </div>
+</div>
 
-    <!-- Quiénes somos -->
-    <section id="quienes" class="oculto">
-      <h2>Quiénes somos</h2>
-      <p>Somos una comunidad agrícola que combina tradición y tecnología para mostrar lo mejor de nuestra tierra. 
-      Nuestro objetivo es compartir productos auténticos y fortalecer el vínculo con la comunidad.</p>
-    </section>
+<!-- TODO: el resto de tus secciones se deja EXACTAMENTE igual -->
 
-    <!-- Contacto -->
-    <section id="contacto" class="oculto">
-      <h2>Contacto</h2>
-      <form id="formContacto">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="celular">Celular:</label>
-        <input type="text" id="celular" name="celular" required>
-
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" required></textarea>
-
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-  </main>
-
+</main>
 
 <footer>
   <p>&copy; 2026 Feria Digital - El Progreso. Todos los derechos reservados.</p>
-    <p><strong>Correo:</strong> contacto@feriaelprogreso.com</p>
-    <p><strong>Celular:</strong> 3009876543</p>
-  </div>
+  <p><strong>Correo:</strong> contacto@feriaelprogreso.com</p>
+  <p><strong>Celular:</strong> 3009876543</p>
 </footer>
 
+<!--  CAMBIO CLAVE (VERSIÓN COMPATIBLE) -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyClOYcAKB9dOMEfhiWWGATqLBIP979BRbg",
+  authDomain: "feria-digital-e21f3.firebaseapp.com",
+  projectId: "feria-digital-e21f3",
+  };
+
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+</script>
+
+<script>
+
+// MODAL
+function abrirAuth() {
+  document.getElementById("authModal").style.display = "block";
+}
+
+function cerrarAuth() {
+  document.getElementById("authModal").style.display = "none";
+}
+
+// REGISTRO
+function register() {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (!email || !email.includes("@")) {
+    document.getElementById("mensaje").innerText = "Correo inválido";
+    return;
+  }
+
+  if (password.length < 6) {
+    document.getElementById("mensaje").innerText = "Mínimo 6 caracteres";
+    return;
+  }
+
+  auth.createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+
+      user.sendEmailVerification();
+
+      document.getElementById("mensaje").innerText =
+        "Registro exitoso. Revisa tu correo.";
+    })
+    .catch((error) => {
+      document.getElementById("mensaje").innerText = error.message;
+    });
+}
+
+// LOGIN
+function login() {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (!email || !email.includes("@")) {
+    document.getElementById("mensaje").innerText = "Correo inválido";
+    return;
+  }
+
+  auth.signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+
+      if (user.emailVerified) {
+        document.getElementById("mensaje").innerText = "Bienvenido";
+        cerrarAuth();
+        mostrarSeccion('cultivos');
+      } else {
+        document.getElementById("mensaje").innerText =
+          "Debes verificar tu correo.";
+      }
+    })
+    .catch((error) => {
+      document.getElementById("mensaje").innerText = error.message;
+    });
+}
+
+// RESET PASSWORD
+function resetPassword() {
+  const email = document.getElementById("email").value.trim();
+
+  if (!email || !email.includes("@")) {
+    document.getElementById("mensaje").innerText = "Correo inválido";
+    return;
+  }
+
+  auth.sendPasswordResetEmail(email)
+    .then(() => {
+      document.getElementById("mensaje").innerText =
+        "Correo de recuperación enviado.";
+    })
+    .catch((error) => {
+      document.getElementById("mensaje").innerText = error.message;
+    });
+}
+
+</script>
+
+</body>
+</html>

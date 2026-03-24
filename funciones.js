@@ -1,3 +1,25 @@
+// 🔥 IMPORTAR FIREBASE
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { 
+  getAuth, 
+  signInWithEmailAndPassword, 
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+  sendPasswordResetEmail
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+// 🔑 CONFIGURACIÓN (REEMPLAZA CON LA TUYA)
+const firebaseConfig = {
+  apiKey: "TU_API_KEY",
+  authDomain: "TU_AUTH_DOMAIN",
+  projectId: "TU_PROJECT_ID",
+};
+
+// 🚀 INICIALIZAR
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+
 // --- Mostrar/ocultar secciones principales ---
 function mostrarSeccion(id) {
   const secciones = document.querySelectorAll('main section');
@@ -9,52 +31,57 @@ function mostrarSeccion(id) {
   }
 }
 
-// --- Mostrar/ocultar cultivos con toggle ---
-function mostrarCultivo(id) {
-  const cultivoSeleccionado = document.getElementById(id);
 
-  if (!cultivoSeleccionado.classList.contains('oculto')) {
-    cultivoSeleccionado.classList.add('oculto');
+// --- LOGIN ---
+document.getElementById("btnIngresar").addEventListener("click", async () => {
+  const email = document.getElementById("correo").value.trim();
+  const password = document.getElementById("contrasena").value.trim();
+
+  if (!email.includes("@")) {
+    alert("Correo inválido");
     return;
   }
 
-  const cultivos = document.querySelectorAll('.cultivo');
-  cultivos.forEach(c => c.classList.add('oculto'));
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    alert("Inicio de sesión exitoso");
+  } catch (error) {
+    alert(error.message);
+  }
+});
 
-  cultivoSeleccionado.classList.remove('oculto');
-}
 
-// --- Validación del formulario de contacto ---
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('formContacto');
+// --- REGISTRO ---
+document.getElementById("btnRegistrar").addEventListener("click", async () => {
+  const email = document.getElementById("correo").value.trim();
+  const password = document.getElementById("contrasena").value.trim();
 
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
+  if (password.length < 6) {
+    alert("La contraseña debe tener al menos 6 caracteres");
+    return;
+  }
 
-    const nombre = document.getElementById('nombre').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const celular = document.getElementById('celular').value.trim();
-    const mensaje = document.getElementById('mensaje').value.trim();
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    
+    // ✉️ ENVIAR VERIFICACIÓN
+    await sendEmailVerification(userCredential.user);
 
-    let errores = [];
+    alert("Usuario registrado. Revisa tu correo para verificar tu cuenta.");
+  } catch (error) {
+    alert(error.message);
+  }
+});
 
-    if (nombre === "") {
-      errores.push("El nombre es obligatorio.");
-    }
 
-    if (!/^\d{10}$/.test(celular)) {
-      errores.push("El celular debe tener exactamente 10 dígitos.");
-    }
+// --- RECUPERAR CONTRASEÑA ---
+document.getElementById("btnReset").addEventListener("click", async () => {
+  const email = document.getElementById("correo").value.trim();
 
-    if (mensaje.length < 10) {
-      errores.push("El mensaje debe tener al menos 10 caracteres.");
-    }
-
-    if (errores.length > 0) {
-      alert("Errores:\n- " + errores.join("\n- "));
-    } else {
-      alert("¡Formulario enviado correctamente! Gracias por contactarnos.");
-      form.reset();
-    }
-  });
+  try {
+    await sendPasswordResetEmail(auth, email);
+    alert("Correo de recuperación enviado");
+  } catch (error) {
+    alert(error.message);
+  }
 });
