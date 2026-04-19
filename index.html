@@ -22,6 +22,7 @@
   <button onclick="mostrarSeccion('logros')">🎓 Logros</button>
   <button onclick="mostrarSeccion('quienes')">👥 Quiénes somos</button>
   <button onclick="mostrarSeccion('contacto')">✉️ Aquí nos Contactoamos contigo</button>
+  <button onclick="abrirChatIA()" class="btn-ia">🤖 Hablar con IA</button>
 </nav>
 
 <main>
@@ -51,9 +52,123 @@
   </div>
 </div>
 
-<!-- TODO: el resto de tus secciones se deja EXACTAMENTE igual -->
+<section id="cultivos" class="oculto">
+  <h2>🌱 Cultivos Principales</h2>
+  <p>Conoce los cultivos que definen nuestra comunidad agrícola.</p>
+  
+  <div class="cultivo">
+    <img src="img/vista.jpg" alt="Cultivo de maíz">
+    <h3>Maíz</h3>
+    <p>Nuestro cultivo estrella, símbolo de tradición y sustento.</p>
+  </div>
 
-</main>
+  <div class="cultivo">
+    <img src="img/gente.jpg" alt="Cultivo de frijol">
+    <h3>Frijol</h3>
+    <p>Proteína vegetal esencial en la dieta de nuestras familias.</p>
+  </div>
+
+  <div class="cultivo">
+    <img src="img/coffe.jpg" alt="Cultivo de café">
+    <h3>Café</h3>
+    <p>Cultivo de excelente calidad que valoramos en todo el mundo.</p>
+  </div>
+
+  <div class="cultivo">
+    <img src="img/platano_criollo.jpg" alt="Cultivo de frutas tropicales">
+    <h3>Frutas Tropicales</h3>
+    <p>Piña, plátano y otras frutas que enriquecen nuestra oferta.</p>
+  </div>
+</section>
+
+<section id="galeria" class="oculto">
+  <h2>📸 Galería de Fotos</h2>
+  <p>Disfruta de imágenes de nuestra feria y nuestras cosechas.</p>
+  <div class="imagenes">
+    <img src="img/banner.jpg" alt="Banner de la feria">
+    <img src="img/Manzana.jpg" alt="Cultivo de manzana">
+    <img src="img/Uvas.jpg" alt="Cultivo de uvas">
+    <img src="img/exposición.jpg" alt="Exposición agrícola">
+  </div>
+</section>
+
+<section id="logros" class="oculto">
+  <h2>🎓 Nuestros Logros</h2>
+  <p>Hemos alcanzado importantes reconocimientos en educación agrícola.</p>
+  <ul style="list-style: none; text-align: center;">
+    <li>✅ Certificación en agricultura sostenible 2024</li>
+    <li>✅ Premio a la innovación agrícola rural</li>
+    <li>✅ Programa de capacitación en 50 municipios</li>
+    <li>✅ Asociación con universidades nacionales</li>
+    <li>✅ Exportación a 5 países latinoamericanos</li>
+  </ul>
+</section>
+
+<section id="quienes" class="oculto">
+  <h2>👥 Quiénes Somos</h2>
+  <p>Somos una comunidad dedicada a la agricultura de El Progreso, comprometida con la innovación, la sostenibilidad y el desarrollo rural.</p>
+  
+  <h3>Nuestra Misión</h3>
+  <p>Promover la agricultura sostenible y conectar productores con mercados regionales e internacionales.</p>
+  
+  <h3>Nuestra Visión</h3>
+  <p>Ser la principal plataforma digital de ferias agrícolas en América Latina.</p>
+  
+  <h3>Nuestros Valores</h3>
+  <ul style="list-style: none; text-align: center;">
+    <li>🌱 Sostenibilidad ambiental</li>
+    <li>🤝 Colaboración comunitaria</li>
+    <li>💡 Innovación tecnológica</li>
+    <li>✊ Equidad social</li>
+  </ul>
+</section>
+
+<section id="contacto" class="oculto">
+  <h2>✉️ Contáctanos</h2>
+  <p>¿Tienes preguntas? Estamos aquí para ayudarte.</p>
+  
+  <form style="max-width: 400px; margin: 0 auto; text-align: left;">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" placeholder="Tu nombre" required>
+
+    <label for="email-contacto">Correo:</label>
+    <input type="email" id="email-contacto" placeholder="Tu correo" required>
+
+    <label for="asunto">Asunto:</label>
+    <input type="text" id="asunto" placeholder="Asunto" required>
+
+    <label for="mensaje-contacto">Mensaje:</label>
+    <textarea id="mensaje-contacto" placeholder="Tu mensaje" rows="5" required></textarea>
+
+    <button type="submit" style="background-color: #0c911e; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 10px;">Enviar</button>
+  </form>
+
+  <div style="margin-top: 2rem; text-align: center;">
+    <h3>Información de Contacto</h3>
+    <p><strong>Correo:</strong> contacto@feriaelprogreso.com</p>
+    <p><strong>Celular:</strong> 3009876543</p>
+    <p><strong>Ubicación:</strong> El Progreso, Honduras</p>
+  </div>
+</section>
+
+<!-- MODAL CHAT IA -->
+<div id="chatModal" class="modal-chat">
+  <div class="chat-container">
+    <div class="chat-header">
+      <h3>🤖 Asistente IA</h3>
+      <span class="close-chat" onclick="cerrarChatIA()">×</span>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="mensaje-ia">
+        <p>¡Hola! Soy tu asistente IA. ¿En qué puedo ayudarte hoy sobre la Feria Digital?</p>
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="inputMensaje" placeholder="Escribe tu pregunta aquí..." onkeypress="if(event.key==='Enter') enviarMensaje()">
+      <button onclick="enviarMensaje()">Enviar</button>
+    </div>
+  </div>
+</div>
 
 <footer>
   <p>&copy; 2026 Feria Digital - El Progreso. Todos los derechos reservados.</p>
@@ -74,6 +189,21 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
+</script>
+
+<script>
+
+// FUNCIÓN PARA MOSTRAR/OCULTAR SECCIONES
+function mostrarSeccion(id) {
+  const secciones = document.querySelectorAll('main section');
+  secciones.forEach(sec => sec.classList.add('oculto'));
+
+  const seleccionada = document.getElementById(id);
+  if (seleccionada) {
+    seleccionada.classList.remove('oculto');
+  }
+}
+
 </script>
 
 <script>
@@ -142,6 +272,69 @@ function login() {
     .catch((error) => {
       document.getElementById("mensaje").innerText = error.message;
     });
+}
+
+// CHAT IA
+function abrirChatIA() {
+  document.getElementById("chatModal").style.display = "flex";
+}
+
+function cerrarChatIA() {
+  document.getElementById("chatModal").style.display = "none";
+}
+
+function enviarMensaje() {
+  const input = document.getElementById("inputMensaje");
+  const mensaje = input.value.trim();
+
+  if (!mensaje) return;
+
+  // Agregar mensaje del usuario
+  const chatMessages = document.getElementById("chatMessages");
+  const mensajeUsuario = document.createElement("div");
+  mensajeUsuario.className = "mensaje-usuario";
+  mensajeUsuario.innerHTML = `<p>${mensaje}</p>`;
+  chatMessages.appendChild(mensajeUsuario);
+
+  input.value = "";
+
+  // Simular respuesta de IA
+  setTimeout(() => {
+    const respuestaIA = document.createElement("div");
+    respuestaIA.className = "mensaje-ia";
+    
+    // Respuestas contextuales
+    let respuesta = "";
+    const mensajeLower = mensaje.toLowerCase();
+    
+    if (mensajeLower.includes("cultivo") || mensajeLower.includes("plantas")) {
+      respuesta = "En nuestra feria destacamos cultivos sostenibles como maíz, frijol, café y frutas tropicales. ¿Quieres saber más sobre alguno en específico?";
+    } else if (mensajeLower.includes("precio") || mensajeLower.includes("costo")) {
+      respuesta = "Los precios varían según la temporada y el producto. Te recomiendo contactar directamente a nuestro equipo en: contacto@feriaelprogreso.com";
+    } else if (mensajeLower.includes("ubicación") || mensajeLower.includes("dónde")) {
+      respuesta = "Nos encuentras en El Progreso. Puedes contactarnos por celular: 3009876543 para más detalles de ubicación.";
+    } else if (mensajeLower.includes("evento") || mensajeLower.includes("fecha")) {
+      respuesta = "Nuestros eventos se realizan durante la temporada de cosecha. Mantente atento a nuestras actualizaciones en la sección de noticias.";
+    } else if (mensajeLower.includes("registro") || mensajeLower.includes("cuenta")) {
+      respuesta = "Puedes registrarte en el botón 'Registrarse / Iniciar sesión' en la sección de inicio. Solo necesitas un correo y contraseña.";
+    } else {
+      respuesta = "Es una pregunta interesante. Te sugiero revisar las diferentes secciones de nuestra feria o contactar directamente a nuestro equipo. ¿Hay algo específico que pueda ayudarte?";
+    }
+    
+    respuestaIA.innerHTML = `<p>${respuesta}</p>`;
+    chatMessages.appendChild(respuestaIA);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }, 500);
+
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Cerrar chat al hacer clic fuera
+window.onclick = function(event) {
+  const modal = document.getElementById("chatModal");
+  if (event.target === modal) {
+    cerrarChatIA();
+  }
 }
 
 // RESET PASSWORD

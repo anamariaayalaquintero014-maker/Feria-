@@ -1,23 +1,24 @@
-// 🔥 IMPORTAR FIREBASE
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { 
-  getAuth, 
-  signInWithEmailAndPassword, 
-  createUserWithEmailAndPassword,
-  sendEmailVerification,
-  sendPasswordResetEmail
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// 🔑 CONFIGURACIÓN (REEMPLAZA CON LA TUYA)
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "TU_API_KEY",
-  authDomain: "TU_AUTH_DOMAIN",
-  projectId: "TU_PROJECT_ID",
+  apiKey: "AIzaSyClOYcAKB9dOMEfhiWWGATqLBIP979BRbg",
+  authDomain: "feria-digital-e21f3.firebaseapp.com",
+  projectId: "feria-digital-e21f3",
+  storageBucket: "feria-digital-e21f3.firebasestorage.app",
+  messagingSenderId: "76279465088",
+  appId: "1:76279465088:web:4dfbb1e4af6c5e2a4e1265",
+  measurementId: "G-NKFCJ72GEJ"
 };
 
-// 🚀 INICIALIZAR
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+const analytics = getAnalytics(app);
 
 
 // --- Mostrar/ocultar secciones principales ---
